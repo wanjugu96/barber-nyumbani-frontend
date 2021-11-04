@@ -22,6 +22,7 @@ export class AppComponent {
     console.log(formdata)
     //this.msgtrue=true;
     });
+    window.alert("Booked successfully you will be contacted shortly ");
   }
 
   ngOnInit(): void {

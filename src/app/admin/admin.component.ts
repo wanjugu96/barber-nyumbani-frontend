@@ -25,5 +25,7 @@ export class AdminComponent implements OnInit {
       console.log(data);
       this.ngOnInit();
     });
+    window.alert("Approved successfully");
+
   }
 }
