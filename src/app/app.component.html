@@ -15,8 +15,8 @@
 
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
@@ -35,6 +35,7 @@
 
             </div>
         </div>
+        <a class="button btn-secondary mr-2" routerLink="/admin">Admin</a>
     </nav>
     <br>
     <header>
@@ -46,28 +47,31 @@
         </div>
 
     </header>
-    <div class="container">
-        <div class="row appointment">
-            <div class="col-md-7"></div>
-            <div class="col-md-5">
-                <h1>Book an appointment</h1>
-                <br>
-
-                <!-- <form #userPost="ngForm" (ngSubmit)="addNewappointment(userPost.value)"> -->
-                <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
-
-                    <input type="text" name="name" ngModel placeholder="Name">
-                    <br>
-                    <br>
-                    <input type="text" name="phone" ngModel placeholder="+2547">
+    < <app-services></app-services>
+        >
+        <p>Our services</p>
+        <div class="ccontainer">
+            <div class="row appointment">
+                <div class="col-md-7 ap"></div>
+                <div class="col-md-5  ap">
+                    <h1>Book an appointment</h1>
                     <br>
 
+                    <!-- <form #userPost="ngForm" (ngSubmit)="addNewappointment(userPost.value)"> -->
+                    <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
 
-                    <br>
+                        <input type="text" name="name" ngModel placeholder="Name">
+                        <br>
+                        <br>
+                        <input type="text" name="phone" ngModel placeholder="+2547">
+                        <br>
+
+
+                        <br>
 
 
 
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="barber" name="barber" size="4" ngModel>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="barber" name="barber" size="4" ngModel>
               <option selected>select a barber</option>
               <hr>
 
@@ -76,9 +80,9 @@
               </option>
               </select>
 
-                    <br>
+                        <br>
 
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="service" name="service" size="4" ngModel>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="service" name="service" size="4" ngModel>
               <option selected>select a Service</option>
               <hr>
               <option *ngFor="let service of services"value={{service.id}}>
@@ -88,25 +92,22 @@
 
 
 
-                    <br>
+                        <br>
 
 
 
 
 
-                    <button class="btn-primary" type="submit">Book </button>
-                    <!-- (ngSubmit)="onSubmit(userPost.value) -->
-                    <!-- {% comment %} (click)="addNewPodcast()" {% endcomment %} -->
-                </form>
+                        <button class="btn-primary" type="submit">Book </button>
+
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <footer>
+        <footer>
 
-        <a class="button" routerLink="/admin">Admin Dashboard</a>
-
-    </footer>
+        </footer>
 </body>
 
 </html>
