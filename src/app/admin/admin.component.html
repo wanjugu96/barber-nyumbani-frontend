@@ -1,51 +1,67 @@
-<p>admin works!</p>
 <div class="container">
 
     <h1>Welccome to you dashboard Admin</h1>
 
     <h3>Pending appointments for approval</h3>
     <hr>
-    <div class="row" *ngFor="let appointment of appointments">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let appointment of appointments">
 
-        <div class="card col-md-3" style="width: 18rem;">
-            <div *ngIf="appointment.status==0">
-
-                <div class="card-body">
-                    <h5 class="card-title">Customer: {{appointment.name}}</h5>
-                    <h6 class="card-title">Phone no.: {{appointment.phone}}</h6>
-                    <h6 class="card-title">Date: {{appointment.status}}</h6>
-                    <p class="card-text">Appointment pending approval</p>
-                    <form #adminapprove="ngForm" (ngSubmit)="onApprove(adminapprove.value)">
-                        <!-- (ngSubmit)="onApprove(adminapprove.value)" -->
-                        <input class="displayid" type="text" name="statusid" ngModel placeholder="id" value="{{appointment.status}}">
-                        <input class="displayid" type="text" name="phone" ngModel placeholder="phone" value="{{appointment.phone}}">
-
-                        <button class="btn-danger" type="submit">Approve</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- <hr> -->
             <div *ngIf="appointment.status==1">
+                <div class="card apointmentcard" style="width: 18rem;">
 
-                <div class="card-body">
-                    <h5 class="card-title">Customer: {{appointment.name}}</h5>
-                    <h6 class="card-title">Phone no.: {{appointment.phone}}</h6>
-                    <h6 class="card-title">status: {{appointment.status}}</h6>
-                    <h6 class="card-title">id: {{appointment.id}}</h6>
 
-                    <p class="card-text">Appointment pending approval</p>
-                    <form #adminapprove="ngForm" (ngSubmit)="onApprove(adminapprove.value)">
+                    <div class="card-body">
+                        <h5 class="card-title">{{appointment.id}}. </h5>
 
-                        <input class="displayid" type="text" name="statusid" ngModel placeholder="id" value="{{appointment.status}}">
-                        <input class="displayid" type="text" name="phone" ngModel placeholder="phone" value="{{appointment.phone}}">
+                        <h5 class="card-title">Customer: {{appointment.name}}</h5>
+                        <h6 class="card-title">Phone no.: {{appointment.phone}}</h6>
+                        <h6 class="card-title">Booked on {{appointment.date}}</h6>
+                        <p class="card-text">Appointment completed</p>
+                        <form (ngSubmit)="onApprove(appointment.id)" #adminapprove="ngForm">
+                            <!-- (ngSubmit)="onApprove(adminapprove.value)" -->
+                            <input class="displayid" type="text" name="statusid" ngModel placeholder="id" value="{{appointment.status}}">
+                            <input class="displayid" type="text" name="phone" ngModel placeholder="phone" value="{{appointment.phone}}">
 
-                        <button class="btn-primary" type="submit">Approve</button>
-                    </form>
+                            <button class="btn-primary" type="submit">Done</button>
+                        </form>
+                    </div>
+                    <br>
+
                 </div>
             </div>
+
+
+
+            <div *ngIf="appointment.status==0">
+                <div class="card apointmentcard" style="width: 18rem;">
+
+
+                    <div class="card-body ">
+                        <h5 class="card-title">{{appointment.id}}. </h5>
+                        <h5 class="card-title">Customer: {{appointment.name}}</h5>
+                        <h6 class="card-title">Phone no.: {{appointment.phone}}</h6>
+                        <h6 class="card-title">Date: {{appointment.date}}</h6>
+                        <p class="card-text">Appointment pending approval</p>
+
+                        <form (ngSubmit)="onApprove(appointment.id)" #adminapprove="ngForm">
+                            <!-- (ngSubmit)="onApprove(adminapprove.value)" -->
+                            <input class="displayid" type="text" name="statusid" ngModel placeholder="id" value="{{appointment.status}}">
+                            <input class="displayid" type="text" name="phone" ngModel placeholder="phone" value="{{appointment.phone}}">
+
+                            <button class="btn-danger" type="submit">Please Approve</button>
+                        </form>
+                    </div>
+                    <br>
+
+                </div>
+            </div>
+
+
         </div>
+        <br>
 
 
     </div>
+    <br>
 </div>
