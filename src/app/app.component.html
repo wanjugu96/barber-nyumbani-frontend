@@ -24,7 +24,7 @@
                         <a class="nav-link" href="#">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ">Our Services</a>
+                        <a class="nav-link " href="#services">Our Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact us</a>
@@ -36,6 +36,8 @@
             </div>
         </div>
         <a class="button btn-secondary mr-2" routerLink="/admin">Admin</a>
+        <!-- <a class="button btn-secondary mr-2" routerLink="/services">services</a> -->
+
     </nav>
     <br>
     <header>
@@ -47,31 +49,30 @@
         </div>
 
     </header>
-    < <app-services></app-services>
-        >
-        <p>Our services</p>
-        <div class="ccontainer">
-            <div class="row appointment">
-                <div class="col-md-7 ap"></div>
-                <div class="col-md-5  ap">
-                    <h1>Book an appointment</h1>
+    <app-services id="services"></app-services>
+
+    <div class="ccontainer">
+        <div class="row appointment">
+            <div class="col-md-7 ap"></div>
+            <div class="col-md-5  ap">
+                <h1>Book an appointment</h1>
+                <br>
+
+                <!-- <form #userPost="ngForm" (ngSubmit)="addNewappointment(userPost.value)"> -->
+                <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+
+                    <input type="text" name="name" ngModel placeholder="Name">
+                    <br>
+                    <br>
+                    <input type="text" name="phone" ngModel placeholder="+2547">
                     <br>
 
-                    <!-- <form #userPost="ngForm" (ngSubmit)="addNewappointment(userPost.value)"> -->
-                    <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
 
-                        <input type="text" name="name" ngModel placeholder="Name">
-                        <br>
-                        <br>
-                        <input type="text" name="phone" ngModel placeholder="+2547">
-                        <br>
-
-
-                        <br>
+                    <br>
 
 
 
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="barber" name="barber" size="4" ngModel>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="barber" name="barber" size="4" ngModel>
               <option selected>select a barber</option>
               <hr>
 
@@ -80,9 +81,9 @@
               </option>
               </select>
 
-                        <br>
+                    <br>
 
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="service" name="service" size="4" ngModel>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="service" name="service" size="4" ngModel>
               <option selected>select a Service</option>
               <hr>
               <option *ngFor="let service of services"value={{service.id}}>
@@ -92,22 +93,22 @@
 
 
 
-                        <br>
+                    <br>
 
 
 
 
 
-                        <button class="btn-primary" type="submit">Book </button>
+                    <button class="btn-primary" type="submit">Book Appointment </button>
 
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
+    </div>
+    <br>
+    <footer>
 
-        <footer>
-
-        </footer>
+    </footer>
 </body>
 
 </html>

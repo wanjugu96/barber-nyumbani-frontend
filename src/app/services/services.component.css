@@ -1,0 +1,34 @@
+.rectangle {
+    position: absolute;
+    width: 781px;
+    height: 100px;
+    left: 310px;
+    top: 134px;
+    background: rgba(196, 196, 196, 0.5);
+}
+
+img {
+    box-shadow: 5px 5px 5px grey;
+}
+
+.apointmentcard {
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100px;
+}
+
+.serviceimg {
+    height: 48px;
+    width: 48px;
+    box-shadow: none;
+}
+
+.beardimg {
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    box-shadow: none;
+    margin-left: 535px;
+}
